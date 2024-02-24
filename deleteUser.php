@@ -1,9 +1,14 @@
 <?php
 
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+
 global $db;
 require_once 'config.php';
 
-/* This File Is Assigned To Shahriar Hossen Jamil */
+/* This File Is Assigned To Shahriar Hossen Jamil : @ShahriarJamil8009 */
+
+// Delete a user
 
 // Start Writing Your Code From Here
 
