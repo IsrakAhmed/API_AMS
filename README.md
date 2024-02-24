@@ -29,3 +29,6 @@
 -> updateUser.php - (Update a user) - Assigned to @IsrakAhmed
 
 -> deleteUser.php - (Delete a user) - Assigned to @ShahriarJamil8009
+
+
+### Start development server with : `php -S localhost:8080` in the root directory of the project.
