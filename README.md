@@ -1,1 +1,1 @@
-# API_AMS
+# API FOR Account Management System
