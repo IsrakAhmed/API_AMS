@@ -9,7 +9,7 @@ Access-Control-Allow-Methods, Authorization, X-Requested-With');
 global $db;
 require_once '../config.php';
 
-/* This File Is Assigned To Bakhtiar Sahib Rizvi : @BakhtiarSahib */
+/* This File Is Assigned To Shahriar Hossen Jamil : @ShahriarJamil8009 */
 
 // Create A New Account
 
