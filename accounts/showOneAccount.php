@@ -6,7 +6,7 @@ header('Access-Control-Allow-Origin: *');
 global $db;
 require_once '../config.php';
 
-/* This File Is Assigned To Sumaiya Tasnim : @SumaiyaTasnim12 */
+/* This File Is Assigned To Esrat Jahan Riya : @EsratRiya */
 
 // Show One Account In The Database
 
