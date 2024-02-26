@@ -7,7 +7,7 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type
 Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
 global $db;
-require_once 'config.php';
+require_once '../config.php';
 
 /* This File Is Assigned To Israk Ahmed : @IsrakAhmed */
 

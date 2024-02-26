@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
 global $db;
-require_once 'config.php';
+require_once '../config.php';
 
 /* This File Is Assigned To Sumaiya Tasnim : @SumaiyaTasnim12 */
 
@@ -29,7 +29,7 @@ if(mysqli_num_rows($result) >0){
 
 else
 {
- echo json_encode(array('message' => 'No Record Found.','status'=>flase));
+ echo json_encode(array('message' => 'No Record Found.','status'=>false));
 
 }
 

@@ -6,7 +6,7 @@ header('Access-Control-Allow-Methods: DELETE');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content type,Access-Control-Allow-Methods,Authorization,X-Requested-With');
 
 global $db;
-require_once 'config.php';
+require_once '../config.php';
 
 /* This File Is Assigned To Shahriar Hossen Jamil : @ShahriarJamil8009 */
 
