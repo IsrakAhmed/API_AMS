@@ -8,7 +8,7 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content type,
 global $db;
 require_once '../config.php';
 
-/* This File Is Assigned To Shahriar Hossen Jamil : @ShahriarJamil8009 */
+/* This File Is Assigned To Sumaiya Tasnim : @SumaiyaTasnim12 */
 
 // Delete An Account
 
