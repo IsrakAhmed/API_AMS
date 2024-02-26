@@ -1,0 +1,53 @@
+DB name : accountapp
+
+
+
+Table name : users
+
+Attributes :
+
+userid int(11) NOT NULL,
+username varchar(255) NOT NULL
+password varchar(255) NOT NULL
+fullname varchar(255) NOT NULL
+phone bigint(13) NOT NULL
+email varchar(255) NOT NULL
+address text NOT NULL
+created_at timestamp NOT NULL DEFAULT current_timestamp(),
+updated_at timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+
+
+
+
+Table name : accounts
+
+Attributes :
+
+account_id : int (11) auto increment primary key NOT NULL
+userid : foreign key from users table NOT NULL 
+account_title : varchar (255) NOT NULL
+account_type : varchar (255) NOT NULL
+balance : float (16,2) NOT NULL
+bank_name : varchar (255) NOT NULL
+branch_name : varchar (255) NOT NULL
+created_at : timestamp : current timestamp NOT NULL
+updated_at : timestamp : current timestamp NOT NULL
+
+
+
+Table name : transactions
+
+Attributes :
+
+transaction_id : int (11) auto increment primary key NOT NULL
+account_id : foreign key from accounts table NOT NULL 
+amount : float (16,2) NOT NULL
+balance_after_transaction : float (16,2) NOT NULL 
+payment_type : varchar (255) NOT NULL
+payment_type_img : varchar (255) - nullable
+debit : float (16,2) NOT NULL
+credit : float (16,2) NOT NULL
+reference : text - nullable
+description : text - nullable
+created_at : timestamp : current timestamp NOT NULL
+updated_at : timestamp : current timestamp NOT NULL
