@@ -1,4 +1,4 @@
-# API FOR Account Management System
+# API For Account Management System
 
 
 -> Step 1: Sync the forked repository from your github account.
