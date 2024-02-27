@@ -27,7 +27,7 @@ $sql = "INSERT INTO accounts(userid, account_title, account_type, balance, bank_
 
 if(mysqli_query($db, $sql))
 {
-    echo json_encode(array('message' => 'Student record inserted.', 'status' => true));
+    echo json_encode(array('message' => 'Account record inserted.', 'status' => true));
 }
 else
 {
