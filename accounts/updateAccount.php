@@ -44,21 +44,32 @@ if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
 }
 
-// Update a user
+// Update an account
 $account_id = $data['account_id'];
+$userid = $data['userid'];
 $account_title = $data['account_title'];
 $account_type = $data['account_type'];
 $balance = $data['balance'];
 $bank_name = $data['bank_name'];
 $branch_name = $data['branch_name'];
 
-$stmt = $db->prepare("UPDATE accounts SET account_title = ?, account_type = ?, balance = ?, bank_name = ?, branch_name = ? WHERE account_id = ?");
-$stmt->bind_param("sssssi", $account_title, $account_type, $balance, $bank_name, $branch_name, $account_id);
+$stmt = $db->prepare("SELECT * FROM accounts WHERE account_id = ?");
+$stmt->bind_param("i", $account_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows === 0) {
+    echo json_encode(array('message' => 'Account Not Found', 'status' => false));
+    exit();
+}
+
+$stmt = $db->prepare("UPDATE accounts SET userid = ?, account_title = ?, account_type = ?, balance = ?, bank_name = ?, branch_name = ? WHERE account_id = ?");
+$stmt->bind_param("issdssi", $userid, $account_title, $account_type, $balance, $bank_name, $branch_name, $account_id);
 
 if ($stmt->execute()) {
-    echo json_encode(array('message' => 'User Updated Successfully', 'status' => true));
+    echo json_encode(array('message' => 'Account Updated Successfully', 'status' => true));
 } else {
-    echo json_encode(array('message' => 'User Not Updated', 'status' => false));
+    echo json_encode(array('message' => 'Account Not Updated', 'status' => false));
 }
 
 $stmt->close();
