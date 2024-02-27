@@ -16,11 +16,6 @@ require_once '../config.php';
 
 $data = json_decode(file_get_contents("php://input"),true);
 
-if(empty($data['account_id']) || empty($data['amount']) || empty($data['payment_type']) || empty($data['debit']) || empty($data['credit'])) {
-    echo json_encode(array('message' => 'All Fields Are Required', 'status' => false));
-    exit();
-}
-
 $account_id = $data['account_id'];
 $amount = $data['amount'];
 $payment_type = $data['payment_type'];
