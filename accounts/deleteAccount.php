@@ -16,11 +16,12 @@ require_once '../config.php';
 // Start Writing Your Code From Here
 
 $data = json_decode(file_get_contents('php://input'), true);
-$student_id = $data['account_id'];
-$sql = "DELETE FROM accounts WHERE account_id = {$student_id}";
+$account_id= $data['account_id'];
+$sql = "DELETE FROM accounts WHERE account_id = {$account_id}";
+
 if(mysqli_query($db, $sql))
 {
-    echo json_encode(array('message' => 'Student record deleted.', 'status' => true));
+    echo json_encode(array('message' => 'Account record deleted.', 'status' => true));
 }
 else
 {
