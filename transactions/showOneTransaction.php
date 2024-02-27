@@ -11,7 +11,20 @@ require_once '../config.php';
 // Show One Transaction In The Database
 
 
-// Start Writing Your Code From Here
+$data = json_decode(file_get_contents("php://input"), true);
+$transaction_id = $data['transaction_id'];
+
+$sql = "SELECT * FROM transactions WHERE transaction_id = {$transaction_id}";
+
+$result = mysqli_query($db, $sql) or die("SQL Query Failed.");
+
+if(mysqli_num_rows($result) > 0){
+    $output = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    echo json_encode($output);
+}
+else{
+    echo json_encode(array('message' => 'No Record Found.','status' => false));
+}
 
 
 
