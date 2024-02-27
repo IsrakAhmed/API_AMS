@@ -14,8 +14,24 @@ require_once '../config.php';
 // Create A New Account
 
 
-// Start Writing Your Code From Here
+$data = json_decode(file_get_contents('php://input'), true);
 
+$userid = $data['userid'];
+$account_title = $data['account_title'];
+$account_type = $data['account_type'];
+$balance = $data['balance'];
+$bank_name = $data['bank_name'];
+$branch_name = $data['branch_name'];
 
+$sql = "INSERT INTO accounts(userid, account_title, account_type, balance, bank_name, branch_name) VALUES('{$userid}','{$account_title}','{$account_type}','{$balance}','{$bank_name}','{$branch_name}')";
+
+if(mysqli_query($db, $sql))
+{
+    echo json_encode(array('message' => 'Student record inserted.', 'status' => true));
+}
+else
+{
+    echo json_encode(array('message' => 'No record inserted.', 'status' => false));
+}
 
 ?>
