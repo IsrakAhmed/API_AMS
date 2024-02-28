@@ -5,7 +5,7 @@
 
 -> Step 2: Import accountapp.sql file to your database (phpmyadmin).
 
--> Step 3: Start development server with : `php -S localhost:8080` in the root directory of the project.
+-> Step 3: Start development server with : `php -S localhost:8000` in the root directory of the project.
 
 
 ## API Endpoints:
