@@ -24,7 +24,7 @@ if(empty($data['userid']))
 
 $user_id = $data['userid'];
 
-$stmt = $db->prepare("SELECT * FROM users WHERE userid = ?");
+$stmt = $db->prepare("SELECT userid, username, password, fullname, phone, email, address, profile_img, created_at, updated_at FROM users WHERE userid = ?");
 $stmt->bind_param("i",$user_id);
 $stmt->execute();
 $result = $stmt->get_result();
