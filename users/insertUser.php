@@ -17,29 +17,43 @@ require_once '../config.php';
 
 
 $data = json_decode(file_get_contents("php://input"),true);
-//$userid = $data['userid'];
+
+if(!isset($data['username']) || !isset($data['password']) || !isset($data['fullname']) || !isset($data['phone']) || !isset($data['email']) || !isset($data['address'])) {
+    echo json_encode(array('message' => 'All fields are required', 'status' => false));
+    exit();
+}
+
+if(empty($data['username']) || empty($data['password']) || empty($data['fullname']) || empty($data['phone']) || empty($data['email']) || empty($data['address'])) {
+    echo json_encode(array('message' => 'None of the fields can be an empty string', 'status' => false));
+    exit();
+}
+
 $username = $data['username'];
 $password = $data['password'];
 $fullname = $data['fullname'];
 $phone = $data['phone'];
 $email = $data['email'];
 $address = $data['address'];
-//include "config.php";
-$sql = "INSERT INTO users(username,password,fullname,phone,email,address)
- VALUES('{$username}','{$password}','{$fullname}','{$phone}','{$email}','{$address}')";
+$profile_img = null;
 
-
-if(mysqli_query($db,$sql)){
-
-    echo json_encode(array('message' => 'User Record inserted','status'=>true));
-
+if(isset($data['profile_img']) && !empty($data['profile_img'])){
+    $profile_img = $data['profile_img'];
 }
 
-else
-{
- echo json_encode(array('message' => 'User Record Not inserted','status'=>flase));
+$stmt = $db->prepare("INSERT INTO users (username, password, fullname, phone, email, address, profile_img) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
+$stmt->bind_param("sssisss", $username, $password, $fullname, $phone, $email, $address, $profile_img);
+
+if($stmt->execute()) {
+    echo json_encode(array('message' => 'User Record inserted', 'status' => true));
 }
+
+else {
+    echo json_encode(array('message' => 'User Record Not inserted', 'status' => false));
+}
+
+$stmt->close();
+$db->close();
 
 
 
