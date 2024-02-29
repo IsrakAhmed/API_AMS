@@ -10,7 +10,7 @@ require_once '../config.php';
 
 // Show all users in the database
 
-$sql = "SELECT * FROM users";
+$sql = "SELECT userid, username, password, fullname, phone, email, address, profile_img, created_at, updated_at FROM users";
 
 $result = mysqli_query($db, $sql) or die("SQL Query Failed.");
 
