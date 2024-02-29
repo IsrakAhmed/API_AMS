@@ -13,9 +13,18 @@ require_once '../config.php';
 // Delete a user
 
 $data = json_decode(file_get_contents('php://input'), true);
+
+
+if(empty($data['userid']))
+{
+    echo json_encode(array('message' => 'User ID is required.', 'status' => false));
+    exit();
+}
+
+
 $userid = $data['userid'];
 
-$stmt = $db->prepare("SELECT * FROM users WHERE userid = ?");
+$stmt = $db->prepare("SELECT userid FROM users WHERE userid = ?");
 $stmt->bind_param("i", $userid);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -27,9 +36,11 @@ if(!$row)
     exit();
 }
 
-$sql = "DELETE FROM users WHERE userid = {$userid}";
+$stmt = $db->prepare("DELETE FROM users WHERE userid = ?");
+$stmt->bind_param("i", $userid);
 
-if(mysqli_query($db, $sql))
+
+if($stmt->execute())
 {
     echo json_encode(array('message' => 'User record deleted.', 'status' => true));
 }
