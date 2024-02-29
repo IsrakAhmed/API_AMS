@@ -15,6 +15,16 @@ require_once '../config.php';
 
 $data = json_decode(file_get_contents("php://input"), true);
 
+if(!isset($data['userid']) || !isset($data['username']) || !isset($data['password']) || !isset($data['fullname']) || !isset($data['phone']) || !isset($data['email']) || !isset($data['address'])) {
+    echo json_encode(array('message' => 'All fields are required', 'status' => false));
+    exit();
+}
+
+if(empty($data['userid']) || empty($data['username']) || empty($data['password']) || empty($data['fullname']) || empty($data['phone']) || empty($data['email']) || empty($data['address'])) {
+    echo json_encode(array('message' => 'None of the fields can be an empty string', 'status' => false));
+    exit();
+}
+
 $userid = $data['userid'];
 $username = $data['username'];
 $password = $data['password'];
@@ -22,9 +32,14 @@ $fullname = $data['fullname'];
 $phone = $data['phone'];
 $email = $data['email'];
 $address = $data['address'];
+$profile_img = null;
+
+if(isset($data['profile_img']) && !empty($data['profile_img'])){
+    $profile_img = $data['profile_img'];
+}
 
 // Check if user exists
-$stmt = $db->prepare("SELECT * FROM users WHERE userid = ?");
+$stmt = $db->prepare("SELECT userid FROM users WHERE userid = ?");
 $stmt->bind_param("i", $userid);
 $stmt->execute();
 $result = $stmt->get_result();
