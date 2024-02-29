@@ -17,10 +17,6 @@ require_once '../config.php';
 // Start Writing Your Code From Here
 
 
-
-
-
-
 $data = json_decode(file_get_contents("php://input"), true);
 
 if (
@@ -37,9 +33,6 @@ if (
 }
 
 
-
-
-
 if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
 }
@@ -53,7 +46,17 @@ $balance = $data['balance'];
 $bank_name = $data['bank_name'];
 $branch_name = $data['branch_name'];
 
-$stmt = $db->prepare("SELECT * FROM accounts WHERE account_id = ?");
+$stmt = $db->prepare("SELECT userid FROM users WHERE userid = ?");
+$stmt->bind_param("i", $userid);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows === 0) {
+    echo json_encode(array('message' => 'User Not Found', 'status' => false));
+    exit();
+}
+
+$stmt = $db->prepare("SELECT account_id FROM accounts WHERE account_id = ?");
 $stmt->bind_param("i", $account_id);
 $stmt->execute();
 $result = $stmt->get_result();
