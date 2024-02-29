@@ -101,6 +101,7 @@ CREATE TABLE `users` (
   `phone` bigint(13) NOT NULL,
   `email` varchar(255) NOT NULL,
   `address` text NOT NULL,
+  `profile_img` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
