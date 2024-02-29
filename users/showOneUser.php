@@ -15,10 +15,19 @@ require_once '../config.php';
 
 
 $data = json_decode(file_get_contents("php://input"),true);
+
+if(empty($data['userid']))
+{
+    echo json_encode(array('message' => 'User ID is required.','status'=>false));
+    exit();
+}
+
 $user_id = $data['userid'];
-//include "config.php";
-$sql = "SELECT * FROM users WHERE userid = {$user_id}";
-$result = mysqli_query($db,$sql) or die("SQL Query failed");
+
+$stmt = $db->prepare("SELECT * FROM users WHERE userid = ?");
+$stmt->bind_param("i",$user_id);
+$stmt->execute();
+$result = $stmt->get_result();
 
 if(mysqli_num_rows($result) >0){
 
