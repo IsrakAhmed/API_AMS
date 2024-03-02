@@ -10,7 +10,8 @@ require_once '../config.php';
 
 // Show All Transactions In The Database
 
-$sql = "SELECT * FROM transactions";
+
+$sql = "SELECT transaction_id, account_id, amount, balance_after_transaction, payment_type, debit, credit, reference, description, created_at, updated_at FROM transactions";
 $result = mysqli_query($db, $sql) or die("SQL Query Failed.");
 
 if(mysqli_num_rows($result) > 0){

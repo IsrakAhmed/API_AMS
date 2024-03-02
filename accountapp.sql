@@ -49,11 +49,11 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`account_id`, `userid`, `account_title`, `account_type`, `balance`, `bank_name`, `branch_name`, `created_at`, `updated_at`) VALUES
-(1, 3, 'SumaiyaS', 'Savings Account', 5000.00, 'ABC Bank', 'Main Branch', '2024-02-26 16:13:51', '2024-02-26 16:13:51'),
-(2, 5, 'JamilS', 'Current Account', 10000.00, 'XYZ Bank', 'Downtown Branch', '2024-02-26 16:13:51', '2024-02-26 16:14:36'),
-(3, 2, 'IsrakS', 'Investment Account', 25000.00, 'PQR Bank', 'City Branch', '2024-02-26 16:13:51', '2024-02-26 16:13:51'),
-(4, 1, 'RiyaS', 'Savings Account', 7500.00, 'DEF Bank', 'West Branch', '2024-02-26 16:13:51', '2024-02-26 16:13:51'),
-(5, 4, 'RizviS', 'Current Account', 3000.00, 'GHI Bank', 'East Branch', '2024-02-26 16:13:51', '2024-02-26 16:14:54');
+(1, 3, 'SumaiyaS', 'Savings Account', 4900.00, 'ABC Bank', 'Main Branch', '2024-02-26 16:13:51', '2024-02-26 16:13:51'),
+(2, 5, 'JamilS', 'Current Account', 10500.00, 'XYZ Bank', 'Downtown Branch', '2024-02-26 16:13:51', '2024-02-26 16:14:36'),
+(3, 2, 'IsrakS', 'Investment Account', 23000.00, 'PQR Bank', 'City Branch', '2024-02-26 16:13:51', '2024-02-26 16:13:51'),
+(4, 1, 'RiyaS', 'Savings Account', 7200.00, 'DEF Bank', 'West Branch', '2024-02-26 16:13:51', '2024-02-26 16:13:51'),
+(5, 4, 'RizviS', 'Current Account', 2000.00, 'GHI Bank', 'East Branch', '2024-02-26 16:13:51', '2024-02-26 16:14:54');
 
 -- --------------------------------------------------------
 

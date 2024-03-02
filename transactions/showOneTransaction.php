@@ -12,11 +12,28 @@ require_once '../config.php';
 
 
 $data = json_decode(file_get_contents("php://input"), true);
+
+if(empty($data['transaction_id'])){
+    echo json_encode(array('message' => 'Transaction ID is required.', 'status' => false));
+    die();
+}
+
 $transaction_id = $data['transaction_id'];
 
-$sql = "SELECT * FROM transactions WHERE transaction_id = {$transaction_id}";
+$stmt = $db->prepare("SELECT transaction_id FROM transactions WHERE transaction_id = ?");
+$stmt->bind_param("i", $transaction_id);
+$stmt->execute();
+$result = $stmt->get_result();
 
-$result = mysqli_query($db, $sql) or die("SQL Query Failed.");
+if(mysqli_num_rows($result) <= 0){
+    echo json_encode(array('message' => 'No Record Found.','status' => false));
+    die();
+}
+
+$stmt = $db->prepare("SELECT transaction_id, account_id, amount, balance_after_transaction, payment_type, debit, credit, reference, description, created_at, updated_at FROM transactions WHERE transaction_id = ?");
+$stmt->bind_param("i", $transaction_id);
+$stmt->execute();
+$result = $stmt->get_result();
 
 if(mysqli_num_rows($result) > 0){
     $output = mysqli_fetch_all($result, MYSQLI_ASSOC);
