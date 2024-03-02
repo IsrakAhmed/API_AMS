@@ -245,7 +245,7 @@
         "payment_type": "payment_type",
         "debit": "1000",
         "credit": "0",
-        "reference" = "reference",
+        "reference" : "reference",
         "description": "description"
     }
     ```
@@ -269,7 +269,7 @@
             "payment_type": "payment_type",
             "debit": "1000",
             "credit": "0",
-            "reference" = "reference",
+            "reference" : "reference",
             "description": "description",
             "created_at": "2024-12-01 00:00:00",
             "updated_at": "2024-12-01 00:00:00"
@@ -281,7 +281,7 @@
             "payment_type": "payment_type",
             "debit": "1000",
             "credit": "0",
-            "reference" = "reference",
+            "reference" : "reference",
             "description": "description",
             "created_at": "2024-12-01 00:00:00",
             "updated_at": "2024-12-01 00:00:00"
@@ -306,7 +306,7 @@
         "payment_type": "payment_type",
         "debit": "1000",
         "credit": "0",
-        "reference" = "reference",
+        "reference" : "reference",
         "description": "description",
         "created_at": "2024-12-01 00:00:00",
         "updated_at": "2024-12-01 00:00:00"
