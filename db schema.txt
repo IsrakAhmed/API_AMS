@@ -13,6 +13,7 @@ fullname varchar(255) NOT NULL
 phone bigint(13) NOT NULL
 email varchar(255) NOT NULL
 address text NOT NULL
+profile_img varchar(255) - nullable
 created_at timestamp NOT NULL DEFAULT current_timestamp(),
 updated_at timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 
@@ -51,3 +52,51 @@ reference : text - nullable
 description : text - nullable
 created_at : timestamp : current timestamp NOT NULL
 updated_at : timestamp : current timestamp NOT NULL
+
+
+
+
+Table name : products
+
+Attributes :
+
+product_id : int (11) auto increment primary key NOT NULL 
+name : varchar (255) NOT NULL
+stock : int (11) NOT NULL
+buying_price: float (16,2) NOT NULL
+selling_price : float (16,2) NOT NULL
+description : text - nullable
+created_at : timestamp : current timestamp NOT NULL
+updated_at : timestamp : current timestamp NOT NULL
+
+
+
+
+
+Table name : services
+
+Attributes :
+
+service_id : int (11) auto increment primary key NOT NULL 
+name : varchar (255) NOT NULL
+selling_price : float (16,2) NOT NULL
+description : text - nullable
+created_at : timestamp : current timestamp NOT NULL
+updated_at : timestamp : current timestamp NOT NULL
+
+
+
+
+
+Table name : customers
+
+Attributes :
+
+customer_id int(11) auto increment primary key NOT NULL
+name varchar(255) NOT NULL
+phone bigint(13) - nullable
+email varchar(255) - nullable
+address text - nullable
+profile_img varchar(255) - nullable
+created_at timestamp NOT NULL DEFAULT current_timestamp(),
+updated_at timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
