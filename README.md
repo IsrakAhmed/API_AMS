@@ -352,6 +352,108 @@
     }
     ```
     
+16. Get all customers : Method: GET
+    - URL: http://localhost:8000/customers/showAllCustomers.php
+    - Response: 
+    ```
+    {
+        {
+            "customer_id": "1",
+            "name": "customer_name",
+            "phone": "8800000000000",
+            "email": "email",
+            "address": "address",
+            "created_at": "2024-12-01 00:00:00",
+            "updated_at": "2024-12-01 00:00:00"
+        },
+        {
+            "customer_id": "2",
+            "name": "customer_name",
+            "phone": "8800000000000",
+            "email": "email",
+            "address": "address",
+            "created_at": "2024-12-01 00:00:00",
+            "updated_at": "2024-12-01 00:00:00"
+        }
+    }
+    ```
+    
+17. Get customer by id : Method: GET
+    - URL: http://localhost:8000/customers/showOneCustomer.php
+    - Request Body: 
+    ```
+    {
+        "customer_id": "1"
+    }
+    ```
+    - Response: 
+    ```
+    {
+        "customer_id": "1",
+        "name": "customer_name",
+        "phone": "8800000000000",
+        "email": "email",
+        "address": "address",
+        "created_at": "2024-12-01 00:00:00",
+        "updated_at": "2024-12-01 00:00:00"
+    }
+    ```
+    
+18. Create new customer : Method: POST
+    - URL: http://localhost:8000/customers/insertCustomer.php
+    - Request Body: 
+    ```
+    {
+        "name": "customer name",
+        "phone": "8800000000000",
+        "email": "email",
+        "address": "address"
+    }
+    ```
+    - Response: 
+    ```
+    {
+        "status": "true",
+        "message": "Customer record inserted"
+    }
+    ```
+    
+19. Update customer : Method: PUT
+    - URL: http://localhost:8000/customers/updateCustomer.php
+    - Request Body: 
+    ```
+    {
+        "customer_id": "1",
+        "name": "customer name",
+        "phone": "8800000000000",
+        "email": "email",
+        "address": "address"
+    }
+    ```
+    - Response: 
+    ```
+    {
+        "status": "true",
+        "message": "Customer Updated Successfully"
+    }
+    ```
+    
+20. Delete customer : Method: DELETE
+    - URL: http://localhost:8000/customers/deleteCustomer.php
+    - Request Body: 
+    ```
+    {
+        "customer_id": "1"
+    }
+    ```
+    - Response: 
+    ```
+    {
+        "status": "true",
+        "message": "Customer record deleted"
+    }
+    ```
+    
 
 ## Contributors:
 
