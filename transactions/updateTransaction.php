@@ -107,7 +107,7 @@ else{
         exit();
     }
 
-    $ck = $db->prepare("SELECT * FROM transactions WHERE created_at < ? AND account_id = ? ORDER BY created_at DESC LIMIT 1");
+    $ck = $db->prepare("SELECT balance_after_transaction FROM transactions WHERE created_at < ? AND account_id = ? ORDER BY created_at DESC LIMIT 1");
     $ck->bind_param("si", $previous_transaction['created_at'], $new_account_id);
     $ck->execute();
     $ck = $ck->get_result();
