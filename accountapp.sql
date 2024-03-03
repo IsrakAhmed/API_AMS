@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 26, 2024 at 05:17 PM
+-- Generation Time: Mar 03, 2024 at 07:47 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -54,6 +54,82 @@ INSERT INTO `accounts` (`account_id`, `userid`, `account_title`, `account_type`,
 (3, 2, 'IsrakS', 'Investment Account', 23000.00, 'PQR Bank', 'City Branch', '2024-02-26 16:13:51', '2024-02-26 16:13:51'),
 (4, 1, 'RiyaS', 'Savings Account', 7200.00, 'DEF Bank', 'West Branch', '2024-02-26 16:13:51', '2024-02-26 16:13:51'),
 (5, 4, 'RizviS', 'Current Account', 2000.00, 'GHI Bank', 'East Branch', '2024-02-26 16:13:51', '2024-02-26 16:14:54');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customers`
+--
+
+CREATE TABLE `customers` (
+  `customer_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `phone` bigint(13) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `address` text DEFAULT NULL,
+  `profile_img` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `customers`
+--
+
+INSERT INTO `customers` (`customer_id`, `name`, `phone`, `email`, `address`, `profile_img`, `created_at`, `updated_at`) VALUES
+(1, 'John Doe', 1234567890, 'john.doe@example.com', '123 Main St, City, Country', NULL, '2024-03-03 06:46:41', '2024-03-03 06:46:41'),
+(2, 'Jane Smith', NULL, 'jane.smith@example.com', '456 Elm St, City, Country', NULL, '2024-03-03 06:46:41', '2024-03-03 06:46:41'),
+(3, 'Michael Johnson', 9876543210, NULL, '789 Oak St, City, Country', NULL, '2024-03-03 06:46:41', '2024-03-03 06:46:41');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `product_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `stock` int(11) NOT NULL,
+  `buying_price` float(16,2) NOT NULL,
+  `selling_price` float(16,2) NOT NULL,
+  `description` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`product_id`, `name`, `stock`, `buying_price`, `selling_price`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'Product 1', 100, 10.50, 15.75, 'Description for Product 1', '2024-03-03 06:46:41', '2024-03-03 06:46:41'),
+(2, 'Product 2', 150, 20.25, 30.50, 'Description for Product 2', '2024-03-03 06:46:41', '2024-03-03 06:46:41'),
+(3, 'Product 3', 75, 8.99, 12.25, 'Description for Product 3', '2024-03-03 06:46:41', '2024-03-03 06:46:41');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `services`
+--
+
+CREATE TABLE `services` (
+  `service_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `selling_price` float(16,2) NOT NULL,
+  `description` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`service_id`, `name`, `selling_price`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'Service 1', 50.25, 'Description for Service 1', '2024-03-03 06:46:41', '2024-03-03 06:46:41'),
+(2, 'Service 2', 75.99, 'Description for Service 2', '2024-03-03 06:46:41', '2024-03-03 06:46:41'),
+(3, 'Service 3', 100.50, 'Description for Service 3', '2024-03-03 06:46:41', '2024-03-03 06:46:41');
 
 -- --------------------------------------------------------
 
@@ -110,12 +186,12 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`userid`, `username`, `password`, `fullname`, `phone`, `email`, `address`, `created_at`, `updated_at`) VALUES
-(1, 'riya', '123456', 'Esrat Jahan', 8801789643367, 'riya@riya.com', 'Bogra, Bangladesh', '2024-02-26 15:55:18', '2024-02-26 15:55:18'),
-(2, 'israk', '123456', 'Israk AHmed', 8801321400000, 'israk@israk.com', 'Rajshahi', '2024-02-26 15:55:18', '2024-02-26 15:55:18'),
-(3, 'sumaiya', '321123', 'Sumaiya Tasnim', 8801700000000, 'sumaiya@sumaiya.com', 'Dhaka', '2024-02-26 15:55:18', '2024-02-26 15:55:18'),
-(4, 'rizvi', '987789', 'Bakhtiar Rizvi', 8801900000000, 'rizvi@rizvi.com', 'Uganda', '2024-02-26 15:55:18', '2024-02-26 15:55:18'),
-(5, 'jamil', '456654', 'Shahriar Jamil', 8801111410000, 'jamil@jamil.com', 'Nigeria', '2024-02-26 15:55:18', '2024-02-26 15:55:18');
+INSERT INTO `users` (`userid`, `username`, `password`, `fullname`, `phone`, `email`, `address`, `profile_img`, `created_at`, `updated_at`) VALUES
+(1, 'riya', '123456', 'Esrat Jahan', 8801789643367, 'riya@riya.com', 'Bogra, Bangladesh', NULL, '2024-02-26 15:55:18', '2024-02-26 15:55:18'),
+(2, 'israk', '123456', 'Israk AHmed', 8801321400000, 'israk@israk.com', 'Rajshahi', NULL, '2024-02-26 15:55:18', '2024-02-26 15:55:18'),
+(3, 'sumaiya', '321123', 'Sumaiya Tasnim', 8801700000000, 'sumaiya@sumaiya.com', 'Dhaka', NULL, '2024-02-26 15:55:18', '2024-02-26 15:55:18'),
+(4, 'rizvi', '987789', 'Bakhtiar Rizvi', 8801900000000, 'rizvi@rizvi.com', 'Uganda', NULL, '2024-02-26 15:55:18', '2024-02-26 15:55:18'),
+(5, 'jamil', '456654', 'Shahriar Jamil', 8801111410000, 'jamil@jamil.com', 'Nigeria', NULL, '2024-02-26 15:55:18', '2024-02-26 15:55:18');
 
 --
 -- Indexes for dumped tables
@@ -127,6 +203,24 @@ INSERT INTO `users` (`userid`, `username`, `password`, `fullname`, `phone`, `ema
 ALTER TABLE `accounts`
   ADD PRIMARY KEY (`account_id`),
   ADD KEY `userid` (`userid`);
+
+--
+-- Indexes for table `customers`
+--
+ALTER TABLE `customers`
+  ADD PRIMARY KEY (`customer_id`);
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`product_id`);
+
+--
+-- Indexes for table `services`
+--
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`service_id`);
 
 --
 -- Indexes for table `transactions`
@@ -150,6 +244,24 @@ ALTER TABLE `users`
 --
 ALTER TABLE `accounts`
   MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `customers`
+--
+ALTER TABLE `customers`
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `services`
+--
+ALTER TABLE `services`
+  MODIFY `service_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `transactions`
