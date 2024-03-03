@@ -33,7 +33,7 @@ $address = (empty($data['address'])) ? null : $data['address'];
 $profile_img = (empty($data['profile_img'])) ? null : $data['profile_img'];
 
 
-// Check if user exists
+// Check if customer exists
 $stmt = $db->prepare("SELECT customer_id FROM customers WHERE customer_id = ?");
 $stmt->bind_param("i", $customer_id);
 $stmt->execute();
