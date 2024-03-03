@@ -454,6 +454,112 @@
     }
     ```
     
+21. Get all products : Method: GET
+    - URL: http://localhost:8000/products/showAllProducts.php
+    - Response: 
+    ```
+    {
+        {
+            "product_id": "1",
+            "name": "product name",
+            "stock": "45",
+            "buying_price": "100",
+            "selling_price": "200",
+            "description": "description",
+            "created_at": "2024-12-01 00:00:00",
+            "updated_at": "2024-12-01 00:00:00"
+        },
+        {
+            "product_id": "2",
+            "name": "product name",
+            "stock": "45",
+            "buying_price": "100",
+            "selling_price": "200",
+            "description": "description",
+            "created_at": "2024-12-01 00:00:00",
+            "updated_at": "2024-12-01 00:00:00"
+        }
+    }
+    ```
+    
+22. Get product by id : Method: GET
+    - URL: http://localhost:8000/products/showOneProduct.php
+    - Request Body: 
+    ```
+    {
+        "product_id": "1"
+    }
+    ```
+    - Response: 
+    ```
+    {
+        "product_id": "1",
+        "name": "product name",
+        "stock": "45",
+        "buying_price": "100",
+        "selling_price": "200",
+        "description": "description",
+        "created_at": "2024-12-01 00:00:00",
+        "updated_at": "2024-12-01 00:00:00"
+    }
+    ```
+    
+23. Create new product : Method: POST
+    - URL: http://localhost:8000/products/insertProduct.php
+    - Request Body: 
+    ```
+    {
+        "name": "product name",
+        "stock": "45",
+        "buying_price": "100",
+        "selling_price": "200",
+        "description": "description"
+    }
+    ```
+    - Response: 
+    ```
+    {
+        "status": "true",
+        "message": "Product record inserted"
+    }
+    ```
+    
+24. Update product : Method: PUT
+    - URL: http://localhost:8000/products/updateProduct.php
+    - Request Body: 
+    ```
+    {
+        "product_id": "1",
+        "name": "product name",
+        "stock": "45",
+        "buying_price": "100",
+        "selling_price": "200",
+        "description": "description"
+    }
+    ```
+    - Response: 
+    ```
+    {
+        "status": "true",
+        "message": "Product Updated Successfully"
+    }
+    ```
+    
+25. Delete product : Method: DELETE
+    - URL: http://localhost:8000/products/deleteProduct.php
+    - Request Body: 
+    ```
+    {
+        "product_id": "1"
+    }
+    ```
+    - Response: 
+    ```
+    {
+        "status": "true",
+        "message": "Product record deleted"
+    }
+    ```
 
 ## Contributors:
 
