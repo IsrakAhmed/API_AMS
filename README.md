@@ -10,7 +10,7 @@
 
 ## API Endpoints:
 
-1. Create new user : Method: POST
+1. Create new User : Method: POST
     - URL: http://localhost:8000/users/insertUser.php
     - Request Body: 
     ```
@@ -31,7 +31,7 @@
     }
     ```
 
-2. Get all users : Method: GET
+2. Get all Users : Method: GET
     - URL: http://localhost:8000/users/showAllUsers.php
     - Response: 
     ```
@@ -62,7 +62,7 @@
     }
     ```
    
-3. Get user by id : Method: GET
+3. Get User by id : Method: GET
     - URL: http://localhost:8000/users/showOneUser.php
     - Request Body: 
     ```
@@ -85,7 +85,7 @@
     }
     ```
    
-4. Update user : Method: PUT
+4. Update User : Method: PUT
     - URL: http://localhost:8000/users/updateUser.php
     - Request Body: 
     ```
@@ -107,7 +107,7 @@
     }
     ```
    
-5. Delete user : Method: DELETE
+5. Delete User : Method: DELETE
     - URL: http://localhost:8000/users/deleteUser.php
     - Request Body: 
     ```
@@ -123,7 +123,7 @@
     }
     ```
    
-6. Create new account : Method: POST
+6. Create new Account : Method: POST
     - URL: http://localhost:8000/accounts/insertAccount.php
     - Request Body: 
     ```
@@ -144,7 +144,7 @@
     }
     ```
    
-7. Get all accounts : Method: GET
+7. Get all Accounts : Method: GET
     - URL: http://localhost:8000/accounts/showAllAccounts.php
     - Response: 
     ```
@@ -174,7 +174,7 @@
     }
     ```
    
-8. Get account by id : Method: GET
+8. Get Account by id : Method: GET
     - URL: http://localhost:8000/accounts/showOneAccount.php
     - Request Body: 
     ```
@@ -197,7 +197,7 @@
     }
     ```
    
-9. Update account : Method: PUT
+9. Update Account : Method: PUT
     - URL: http://localhost:8000/accounts/updateAccount.php
     - Request Body: 
     ```
@@ -219,7 +219,7 @@
     }
     ```
    
-10. Delete account : Method: DELETE
+10. Delete Account : Method: DELETE
     - URL: http://localhost:8000/accounts/deleteAccount.php
     - Request Body: 
     ```
@@ -235,7 +235,7 @@
     }
     ```
     
-11. Create new transaction : Method: POST
+11. Create new Transaction : Method: POST
     - URL: http://localhost:8000/transactions/insertTransaction.php
     - Request Body: 
     ```
@@ -257,7 +257,7 @@
     }
     ```
     
-12. Get all transactions : Method: GET
+12. Get all Transactions : Method: GET
     - URL: http://localhost:8000/transactions/showAllTransactions.php
     - Response: 
     ```
@@ -289,7 +289,7 @@
     }
     ```
     
-13. Get transaction by id : Method: GET
+13. Get Transaction by id : Method: GET
     - URL: http://localhost:8000/transactions/showOneTransaction.php
     - Request Body: 
     ```
@@ -313,7 +313,7 @@
     }
     ```
     
-14. Update transaction : Method: PUT
+14. Update Transaction : Method: PUT
     - URL: http://localhost:8000/transactions/updateTransaction.php
     - Request Body: 
     ```
@@ -336,7 +336,7 @@
     }
     ```
     
-15. Delete transaction : Method: DELETE
+15. Delete Transaction : Method: DELETE
     - URL: http://localhost:8000/transactions/deleteTransaction.php
     - Request Body: 
     ```
@@ -352,7 +352,7 @@
     }
     ```
     
-16. Get all customers : Method: GET
+16. Get all Customers : Method: GET
     - URL: http://localhost:8000/customers/showAllCustomers.php
     - Response: 
     ```
@@ -378,7 +378,7 @@
     }
     ```
     
-17. Get customer by id : Method: GET
+17. Get Customer by id : Method: GET
     - URL: http://localhost:8000/customers/showOneCustomer.php
     - Request Body: 
     ```
@@ -399,7 +399,7 @@
     }
     ```
     
-18. Create new customer : Method: POST
+18. Create new Customer : Method: POST
     - URL: http://localhost:8000/customers/insertCustomer.php
     - Request Body: 
     ```
@@ -418,7 +418,7 @@
     }
     ```
     
-19. Update customer : Method: PUT
+19. Update Customer : Method: PUT
     - URL: http://localhost:8000/customers/updateCustomer.php
     - Request Body: 
     ```
@@ -438,7 +438,7 @@
     }
     ```
     
-20. Delete customer : Method: DELETE
+20. Delete Customer : Method: DELETE
     - URL: http://localhost:8000/customers/deleteCustomer.php
     - Request Body: 
     ```
@@ -454,7 +454,7 @@
     }
     ```
     
-21. Get all products : Method: GET
+21. Get all Products : Method: GET
     - URL: http://localhost:8000/products/showAllProducts.php
     - Response: 
     ```
@@ -482,7 +482,7 @@
     }
     ```
     
-22. Get product by id : Method: GET
+22. Get Product by id : Method: GET
     - URL: http://localhost:8000/products/showOneProduct.php
     - Request Body: 
     ```
@@ -504,7 +504,7 @@
     }
     ```
     
-23. Create new product : Method: POST
+23. Create new Product : Method: POST
     - URL: http://localhost:8000/products/insertProduct.php
     - Request Body: 
     ```
@@ -524,7 +524,7 @@
     }
     ```
     
-24. Update product : Method: PUT
+24. Update Product : Method: PUT
     - URL: http://localhost:8000/products/updateProduct.php
     - Request Body: 
     ```
@@ -545,7 +545,7 @@
     }
     ```
     
-25. Delete product : Method: DELETE
+25. Delete Product : Method: DELETE
     - URL: http://localhost:8000/products/deleteProduct.php
     - Request Body: 
     ```
@@ -560,6 +560,104 @@
         "message": "Product record deleted"
     }
     ```
+    
+26. Get all Services : Method: GET
+    - URL: http://localhost:8000/services/showAllServices.php
+    - Response: 
+    ```
+    {
+        {
+            "service_id": "1",
+            "name": "service name",
+            "selling_price": "100",
+            "description": "description",
+            "created_at": "2024-12-01 00:00:00",
+            "updated_at": "2024-12-01 00:00:00"
+        },
+        {
+            "service_id": "2",
+            "name": "service name",
+            "selling_price": "100",
+            "description": "description",
+            "created_at": "2024-12-01 00:00:00",
+            "updated_at": "2024-12-01 00:00:00"
+        }
+    }
+    ```
+    
+27. Get Service by id : Method: GET
+    - URL: http://localhost:8000/services/showOneService.php
+    - Request Body: 
+    ```
+    {
+        "service_id": "1"
+    }
+    ```
+    - Response: 
+    ```
+    {
+        "service_id": "1",
+        "name": "service name",
+        "selling_price": "100",
+        "description": "description",
+        "created_at": "2024-12-01 00:00:00",
+        "updated_at": "2024-12-01 00:00:00"
+    }
+    ```
+    
+28. Create new Service : Method: POST
+    - URL: http://localhost:8000/services/insertService.php
+    - Request Body: 
+    ```
+    {
+        "name": "service name",
+        "selling_price": "100",
+        "description": "description"
+    }
+    ```
+    - Response: 
+    ```
+    {
+        "status": "true",
+        "message": "Service record inserted"
+    }
+    ```
+    
+29. Update Service : Method: PUT
+    - URL: http://localhost:8000/services/updateService.php
+    - Request Body: 
+    ```
+    {
+        "service_id": "1",
+        "name": "service name",
+        "selling_price": "100",
+        "description": "description"
+    }
+    ```
+    - Response: 
+    ```
+    {
+        "status": "true",
+        "message": "Service Updated Successfully"
+    }
+    ```
+    
+30. Delete Service : Method: DELETE
+    - URL: http://localhost:8000/services/deleteService.php
+    - Request Body: 
+    ```
+    {
+        "service_id": "1"
+    }
+    ```
+    - Response: 
+    ```
+    {
+        "status": "true",
+        "message": "Service record deleted"
+    }
+    ```
+
 
 ## Contributors:
 
