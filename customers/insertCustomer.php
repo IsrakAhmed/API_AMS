@@ -35,7 +35,7 @@ $address = (empty($data['address'])) ? null : $data['address'];
 $profile_img = (empty($data['profile_img'])) ? null : $data['profile_img'];
 
 
-$stmt = $db->prepare("INSERT INTO users (name, phone, email, address, profile_img) VALUES (?, ?, ?, ?, ?)");
+$stmt = $db->prepare("INSERT INTO customers (name, phone, email, address, profile_img) VALUES (?, ?, ?, ?, ?)");
 
 $stmt->bind_param("sisss", $name, $phone, $email, $address, $profile_img);
 
